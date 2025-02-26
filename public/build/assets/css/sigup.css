@@ -1,0 +1,498 @@
+.sign-up {
+    position: relative;
+    width: 1440px;
+    height: 1024px;
+    background-color: #76B168;
+  }
+  
+  .sign-up .logo {
+    position: absolute;
+    width: 110px;
+    height: 54px;
+    top: 86px;
+    left: 696px;
+    background-image: url(./img/logo.png);
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+  
+  .sign-up .frame {
+    display: flex;
+    flex-direction: column;
+    width: 640px;
+    align-items: flex-start;
+    gap: 48px;
+    position: absolute;
+    top: 204px;
+    left: 696px;
+  }
+  
+  .sign-up .div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+  }
+  
+  .sign-up .text-wrapper {
+    position: relative;
+    width: fit-content;
+    margin-top: -1.00px;
+    font-family: var(--tradegothic-bold-40px-font-family);
+    font-weight: var(--tradegothic-bold-40px-font-weight);
+    color: #000000;
+    font-size: var(--tradegothic-bold-40px-font-size);
+    letter-spacing: var(--tradegothic-bold-40px-letter-spacing);
+    line-height: var(--tradegothic-bold-40px-line-height);
+    font-style: var(--tradegothic-bold-40px-font-style);
+  }
+  
+  .sign-up .p {
+    position: relative;
+    width: fit-content;
+    opacity: 0.75;
+    font-family: var(--montserrat-regular-16px-font-family);
+    font-weight: var(--montserrat-regular-16px-font-weight);
+    color: var(--blackish-green);
+    font-size: var(--montserrat-regular-16px-font-size);
+    letter-spacing: var(--montserrat-regular-16px-letter-spacing);
+    line-height: var(--montserrat-regular-16px-line-height);
+    font-style: var(--montserrat-regular-16px-font-style);
+  }
+  
+  .sign-up .frame-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+  }
+  
+  .sign-up .frame-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+  }
+  
+  .sign-up .frame-4 {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+  }
+  
+  .sign-up .text-field {
+    display: flex;
+    flex-direction: column;
+    height: 56px;
+    align-items: flex-start;
+    position: relative;
+    flex: 1;
+    flex-grow: 1;
+    border-radius: 4px 4px 0px 0px;
+  }
+  
+  .sign-up .state-layer-wrapper {
+    gap: 10px;
+    flex: 0 0 auto;
+    background-color: var(--neutrals);
+    border-radius: 4px;
+    border: 1px solid;
+    border-color: #79747e;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+  }
+  
+  .sign-up .state-layer {
+    display: flex;
+    align-items: center;
+    padding: 8px 0px 8px 16px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+    border-radius: 4px 4px 0px 0px;
+  }
+  
+  .sign-up .content {
+    display: flex;
+    flex-direction: column;
+    height: 40px;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    flex: 1;
+    flex-grow: 1;
+  }
+  
+  .sign-up .input-text {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    flex: 0 0 auto;
+    border: none;
+    background: none;
+    margin-top: -1.00px;
+    font-family: var(--montserrat-regular-16px-font-family);
+    font-weight: var(--montserrat-regular-16px-font-weight);
+    color: #1c1b1f;
+    font-size: var(--montserrat-regular-16px-font-size);
+    letter-spacing: var(--montserrat-regular-16px-letter-spacing);
+    line-height: var(--montserrat-regular-16px-line-height);
+    font-style: var(--montserrat-regular-16px-font-style);
+    padding: 0;
+  }
+  
+  .sign-up .label-text {
+    display: inline-flex;
+    align-items: center;
+    padding: 0px 4px;
+    position: absolute;
+    top: -16px;
+    left: -4px;
+    background-color: var(--neutrals);
+    border: none;
+    color: #1c1b1f;
+    margin-top: -1.00px;
+    font-family: var(--montserrat-regular-14px-font-family);
+    font-weight: var(--montserrat-regular-14px-font-weight);
+    font-size: var(--montserrat-regular-14px-font-size);
+    letter-spacing: var(--montserrat-regular-14px-letter-spacing);
+    line-height: var(--montserrat-regular-14px-line-height);
+    font-style: var(--montserrat-regular-14px-font-style);
+  }
+  
+  .sign-up .text-field-wrapper {
+    height: 56px;
+    border-radius: 4px 4px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+  }
+  
+  .sign-up .div-wrapper {
+    gap: 10px;
+    flex: 0 0 auto;
+    background-color: #ffffff;
+    border-radius: 4px;
+    border: 1px solid;
+    border-color: #79747e;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+  }
+  
+  .sign-up .state-layer-2 {
+    display: flex;
+    align-items: center;
+    padding: 4px 0px 4px 16px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+    border-radius: 4px 4px 0px 0px;
+  }
+  
+  .sign-up .label-text-wrapper {
+    display: inline-flex;
+    align-items: center;
+    padding: 0px 4px;
+    position: absolute;
+    top: -16px;
+    left: -4px;
+    background-color: var(--neutrals);
+  }
+  
+  .sign-up .label {
+    color: var(--blackish-green);
+    position: relative;
+    width: fit-content;
+    margin-top: -1.00px;
+    font-family: var(--montserrat-regular-14px-font-family);
+    font-weight: var(--montserrat-regular-14px-font-weight);
+    font-size: var(--montserrat-regular-14px-font-size);
+    letter-spacing: var(--montserrat-regular-14px-letter-spacing);
+    line-height: var(--montserrat-regular-14px-line-height);
+    font-style: var(--montserrat-regular-14px-font-style);
+  }
+  
+  .sign-up .trailing-icon {
+    display: flex;
+    flex-direction: column;
+    width: 48px;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+    position: relative;
+  }
+  
+  .sign-up .img {
+    position: relative;
+    width: 24px;
+    height: 24px;
+  }
+  
+  .sign-up .input {
+    display: inline-flex;
+    align-items: center;
+    padding: 0px 4px;
+    position: absolute;
+    top: -16px;
+    left: -4px;
+    background-color: var(--neutrals);
+    border: none;
+    color: var(--blackish-green);
+    margin-top: -1.00px;
+    font-family: var(--montserrat-regular-14px-font-family);
+    font-weight: var(--montserrat-regular-14px-font-weight);
+    font-size: var(--montserrat-regular-14px-font-size);
+    letter-spacing: var(--montserrat-regular-14px-letter-spacing);
+    line-height: var(--montserrat-regular-14px-line-height);
+    font-style: var(--montserrat-regular-14px-font-style);
+  }
+  
+  .sign-up .frame-5 {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    flex: 0 0 auto;
+  }
+  
+  .sign-up .i-agree-to-all-the {
+    position: relative;
+    width: fit-content;
+    font-family: "Montserrat-Medium", Helvetica;
+    font-weight: 400;
+    color: transparent;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .sign-up .span {
+    font-weight: var(--montserrat-medium-14px-font-weight);
+    color: #112211;
+    font-family: var(--montserrat-medium-14px-font-family);
+    font-style: var(--montserrat-medium-14px-font-style);
+    letter-spacing: var(--montserrat-medium-14px-letter-spacing);
+    line-height: var(--montserrat-medium-14px-line-height);
+    font-size: var(--montserrat-medium-14px-font-size);
+  }
+  
+  .sign-up .text-wrapper-2 {
+    font-family: var(--montserrat-semibold-14px-font-family);
+    font-weight: var(--montserrat-semibold-14px-font-weight);
+    color: #ff8682;
+    font-style: var(--montserrat-semibold-14px-font-style);
+    letter-spacing: var(--montserrat-semibold-14px-letter-spacing);
+    line-height: var(--montserrat-semibold-14px-line-height);
+    font-size: var(--montserrat-semibold-14px-font-size);
+  }
+  
+  .sign-up .frame-6 {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    position: relative;
+    flex: 0 0 auto;
+  }
+  
+  .sign-up .button {
+    box-sizing: border-box;
+    width: 100%; /* Nút rộng theo container */
+    max-width: 250px; /* Giới hạn chiều rộng */
+    padding: 12px 0;
+    background-color: #02491d; /* Nền xanh */
+    color: white; /* Chữ trắng */
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sign-up .style-layer {
+    display: flex;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 8px 16px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    background-color: var(--mint-green);
+    border-radius: 4px;
+  }
+  
+  .sign-up .button-2 {
+    all: unset;
+    box-sizing: border-box;
+    position: relative;
+    width: fit-content;
+    font-family: var(--montserrat-semibold-14px-font-family);
+    font-weight: var(--montserrat-semibold-14px-font-weight);
+    color: var(--blackish-green);
+    font-size: var(--montserrat-semibold-14px-font-size);
+    letter-spacing: var(--montserrat-semibold-14px-letter-spacing);
+    line-height: var(--montserrat-semibold-14px-line-height);
+    font-style: var(--montserrat-semibold-14px-font-style);
+  }
+  
+  .sign-up .already-have-an {
+    position: relative;
+    width: 640px;
+    font-family: "Montserrat-Medium", Helvetica;
+    font-weight: 400;
+    color: transparent;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .sign-up .frame-7 {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+  }
+  
+  .sign-up .rectangle {
+    position: relative;
+    flex: 1;
+    flex-grow: 1;
+    height: 1px;
+    background-color: var(--blackish-green);
+    opacity: 0.25;
+  }
+  
+  .sign-up .text-wrapper-3 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1.00px;
+    opacity: 0.5;
+    font-family: var(--montserrat-regular-14px-font-family);
+    font-weight: var(--montserrat-regular-14px-font-weight);
+    color: var(--blackish-green);
+    font-size: var(--montserrat-regular-14px-font-size);
+    letter-spacing: var(--montserrat-regular-14px-letter-spacing);
+    line-height: var(--montserrat-regular-14px-line-height);
+    font-style: var(--montserrat-regular-14px-font-style);
+  }
+  
+  .sign-up .frame-8 {
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+  }
+  
+  .sign-up .group {
+    position: absolute;
+    width: 488px;
+    height: 816px;
+    top: 104px;
+    left: 104px;
+  }
+  
+  .sign-up .overlap-group {
+    position: relative;
+    height: 816px;
+  }
+  
+  .sign-up .rectangle-2 {
+    position: absolute;
+    width: 486px;
+    height: 816px;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+  
+  .sign-up .rectangle-3 {
+    position: absolute;
+    width: 486px;
+    height: 58px;
+    top: 758px;
+    left: 2px;
+    border-radius: 30px 30px 0px 0px;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+  
+  .sign-up .frame-9 {
+    display: flex;
+    width: 54px;
+    align-items: flex-start;
+    gap: 8px;
+    position: absolute;
+    top: 782px;
+    left: 216px;
+  }
+  
+  .sign-up .rectangle-4 {
+    position: relative;
+    width: 32px;
+    height: 10px;
+    background-color: var(--mint-green);
+    border-radius: 5px;
+  }
+  
+  .sign-up .ellipse {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    background-color: var(--neutrals);
+    border-radius: 5px;
+  }
+  
+  .sign-up .ellipse-2 {
+    margin-right: -14.30px;
+    position: relative;
+    width: 10px;
+    height: 10px;
+    background-color: var(--neutrals);
+    border-radius: 5px;
+  }
+  
+  
