@@ -12,17 +12,18 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tours', function (Blueprint $table) {
-            $table->uuid('id')->primary();
+            $table->id();
             $table->string('title');
             $table->text('description');
-            $table->json('destinations'); // Lưu danh sách địa điểm
-            $table->json('images'); // Lưu danh sách ảnh
+            $table->string('destinations'); // Lưu danh sách địa điểm
+            $table->string('images'); // Lưu danh sách ảnh
             $table->integer('number_of_days');
             $table->timestamp('start_time');
             $table->timestamp('end_time');
             $table->text('schedule');
             $table->integer('number_of_guests');
             $table->enum('status', ['active', 'canceled', 'finished'])->default('active');
+            $table->float('price', 10,2);
             $table->timestamps();
         });
     }

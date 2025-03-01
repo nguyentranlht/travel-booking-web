@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer('month');
             $table->decimal('total_revenue', 15, 2);
             $table->string('payment_method');
-            $table->uuid('tour_id');
+            $table->unsignedBigInteger('tour_id');
             $table->timestamps();
 
             // Foreign key

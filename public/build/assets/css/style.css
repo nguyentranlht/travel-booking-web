@@ -10,7 +10,6 @@ header {
     color: white;
     text-align: center;
     padding: 100px 0;
-    border-radius: 10px; /* Bo góc nhẹ cho background ảnh */
 }
 
 nav {
@@ -245,3 +244,203 @@ footer {
 }
 
 .footer-links a {}
+
+.navbar {
+    background-color: #90ee90;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+/* Căn chỉnh logo */
+.navbar .logo {
+    display: flex;
+    justify-content: space-between; /* Giữ khoảng cách giữa các phần */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    padding: 15px 20px;
+}
+
+.navbar .logo img {
+    height: 50px;
+}
+
+/* Căn chỉnh phần giữa */
+.navbar .middle-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Điều chỉnh phần bên phải (Yêu thích + User) */
+.navbar .right-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Căn chỉnh icon yêu thích */
+.navbar .favorite-icon img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Căn chỉnh dropdown user */
+.navbar .dropdown {
+    position: relative;
+}
+
+.navbar .dropbtn {
+    background-color: #333;
+    color: white;
+    padding: 8px 12px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+/* Căn dropdown về bên phải */
+.navbar .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    min-width: 150px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.navbar .dropdown-content a {
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.navbar .dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Hiển thị dropdown khi hover */
+.navbar .dropdown:hover .dropdown-content {
+    display: block;
+}
+.left-section {
+    display: flex;
+    gap: 20px; /* Tạo khoảng cách giữa Find Flight và Find Stays */
+}
+
+.left-section a {
+    text-decoration: none;
+    color: #333;
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color: #f8f8f8; /* Thêm màu nền nhẹ để dễ nhìn */
+}
+
+.left-section a:hover {
+    background-color: #d3d3d3;
+}
+
+
+.footer {
+    background-color: #76B168; /* Màu nền xanh nhạt */
+    padding: 40px 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-left {
+    flex-basis: 25%;
+}
+
+.footer-middle {
+    display: flex;
+    justify-content: space-around;
+    flex-basis: 40%;
+}
+
+.footer-right {
+    flex-basis: 30%;
+}
+
+.footer-logo {
+    height: 50px; /* Điều chỉnh kích thước logo */
+}
+
+.footer-social-icons {
+    margin-top: 20px;
+}
+
+.footer-social-icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: #d3d3d3; /* Màu xám nhạt */
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.footer-social-icon:hover {
+    background-color: #555;
+    color: white;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #333;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.footer-button {
+    background-color: #f08080; /* Màu đỏ nhạt */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.footer-button:hover {
+    background-color: #e06666; /* Màu đỏ đậm hơn */
+}
+
+.footer-copyright {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+}
