@@ -41,6 +41,9 @@
                         </button>
                     </form>
                 </td>
+                <td>
+                    <a href="{{ route('checkout', ['tourId' => $tour->id]) }}" class="btn btn-success">Book now</a>
+                </td>
             </tr>
             @endforeach
         </tbody>

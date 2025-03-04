@@ -2,14 +2,14 @@
 
 namespace App\Services;
 
-use App\Repositories\ITourRepository;
+use App\Interfaces\IBaseRepository;
 use Illuminate\Support\Facades\Storage;
 
 class TourService
 {
     protected $tourRepository;
 
-    public function __construct(ITourRepository $tourRepository)
+    public function __construct(IBaseRepository $tourRepository)
     {
         $this->tourRepository = $tourRepository;
     }

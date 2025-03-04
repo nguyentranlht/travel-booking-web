@@ -3,34 +3,34 @@
 namespace App\Repositories;
 
 use App\Interfaces\IBaseRepository;
-use App\Models\Tour;
+use App\Models\Booking;
 
-class TourRepository implements IBaseRepository
+class BookingRepository implements IBaseRepository
 {
     public function getAll()
     {
-        return Tour::all();
+        return Booking::all();
     }
 
     public function findById($id)
     {
-        return Tour::findOrFail($id);
+        return Booking::findOrFail($id);
     }
 
     public function create(array $data)
     {
-        return Tour::create($data);
+        return Booking::create($data);
     }
 
     public function update($id, array $data)
     {
-        $tour = Tour::findOrFail($id);
+        $tour = Booking::findOrFail($id);
         $tour->update($data);
         return $tour;
     }
 
     public function delete($id)
     {
-        return Tour::destroy($id);
+        return Booking::destroy($id);
     }
 }

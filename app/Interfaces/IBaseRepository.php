@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Repositories;
+namespace App\Interfaces;
 
-interface ITourRepository
+interface IBaseRepository
 {
     public function getAll();
     public function findById($id);

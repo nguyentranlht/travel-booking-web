@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Repositories\ITourRepository;
+use App\Interfaces\IBaseRepository;
 use App\Repositories\TourRepository;
 use Illuminate\Support\ServiceProvider;
 
@@ -13,7 +13,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->bind(ITourRepository::class, TourRepository::class);
+        $this->app->bind(IBaseRepository::class, TourRepository::class);
     }
 
     /**
