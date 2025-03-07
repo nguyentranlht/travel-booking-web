@@ -346,6 +346,99 @@ footer {
     background-color: #d3d3d3;
 }
 
+.account-page {
+    font-family: Arial, sans-serif;
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+    text-align: center;
+    position: relative;
+}
+
+.cover-photo {
+    background: linear-gradient(45deg, #f97316, #0f172a);
+    height: 150px;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+}
+
+.upload-cover {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: #4caf50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.profile-info {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+.account-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.account-tabs button {
+    padding: 10px 20px;
+    border: none;
+    background: #f3f4f6;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.account-tabs .active {
+    background: #4caf50;
+    color: white;
+}
+
+.account-details {
+    margin-top: 20px;
+}
+
+.info-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f9fafb;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.info-box label {
+    font-weight: bold;
+}
+
+.info-box button {
+    background: #4caf50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 
 .footer {
     background-color: #76B168; /* Màu nền xanh nhạt */

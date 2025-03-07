@@ -1,17 +1,44 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+@extends('layouts.app')
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    {{ __("You're logged in!") }}
-                </div>
-            </div>
+@section('content')
+
+<main class="account-page">
+    <div class="profile-header">
+        <div class="profile-info">
+            <h2>{{ auth()->user()->first_name . ' ' . auth()->user()->last_name }}</h2>
+            <p>{{ auth()->user()->email }}</p>
         </div>
     </div>
-</x-app-layout>
+    <div class="account-tabs">
+        <button class="text-dark btn btn-success ">Account</button>
+        <a href="{{ route('profile.edit') }}">
+            <button class="text-dark btn btn-success">Settings</button>
+        </a>
+        <button class="text-dark btn btn-success">History</button>
+    </div>
+    <section class="account-details">
+        <h3>Account</h3>
+        <div class="info-box">
+            <label>Name</label>
+            <p>{{ auth()->user()->first_name . ' ' . auth()->user()->last_name  }}</p>
+        </div>
+        <div class="info-box">
+            <label>Email</label>
+            <p>{{ auth()->user()->email }}</p>
+        </div>
+        <div class="info-box">
+            <label>Password</label>
+            <p>*****************</p>
+        </div>
+        <div class="info-box">
+            <label>Phone number</label>
+            <p>{{ auth()->user()->phone }}</p>
+        </div>
+        <div class="info-box">
+            <label>Date of birth</label>
+            <p>{{ auth()->user()->date_of_birth }}</p>
+        </div>
+    </section>
+</main>
+
+@endsection
