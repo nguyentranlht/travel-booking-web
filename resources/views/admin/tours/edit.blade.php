@@ -7,7 +7,7 @@
             <h2 class="mb-0">Edit Tour</h2>
         </div>
         <div class="card-body">
-            <form action="{{ route('tours.update', $tour->id) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('admin.tours.update', $tour->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
 
@@ -80,7 +80,7 @@
                 </div>
 
                 <button type="submit" class="btn btn-success">Update Tour</button>
-                <a href="{{ route('tours.index') }}" class="btn btn-secondary">Cancel</a>
+                <a href="{{ route('admin.tours.index') }}" class="btn btn-secondary">Cancel</a>
             </form>
         </div>
     </div>

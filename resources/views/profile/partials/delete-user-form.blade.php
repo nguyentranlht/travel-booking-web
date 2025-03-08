@@ -28,7 +28,7 @@
                 <p>Once your account is deleted, all of its resources and data will be permanently deleted.</p>
                 <p>Please enter your password to confirm you would like to permanently delete your account.</p>
 
-                <form method="post" action="{{ route('profile.destroy') }}">
+                <form method="post" action="{{ route('user.profile.update') }}">
                     @csrf
                     @method('delete')
 

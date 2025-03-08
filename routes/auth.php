@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\TourController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\ConfirmablePasswordController;
 use App\Http\Controllers\Auth\EmailVerificationNotificationController;
@@ -56,4 +58,17 @@ Route::middleware('auth')->group(function () {
 
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
         ->name('logout');
+
+    Route::prefix('admin')->middleware(['role:admin'])->group(function () {
+        Route::get('/dashboard',[DashboardController::class, 'index'])->name('admin.dashboard');
+        Route::resource('/tours', TourController::class)->names([
+            'index' => 'admin.tours.index',
+            'create' => 'admin.tours.create',
+            'store' => 'admin.tours.store',
+            'edit' => 'admin.tours.edit',
+            'update' => 'admin.tours.update',
+            'destroy' => 'admin.tours.destroy',
+            'show' => 'admin.tours.show',
+        ]);;
+    });
 });

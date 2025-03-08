@@ -3,7 +3,8 @@
 @section('content')
 <div class="container">
     <h2 class="my-4">Tour List</h2>
-
+    <a href="{{ route('admin.tours.create') }}" class="btn btn-primary mb-3">Add New Tour</a>
+    
     @if (session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
@@ -30,10 +31,15 @@
                 <td>{{ $tour->end_time }}</td>
                 <td>${{ $tour->price }}</td>
                 <td>
-                    <a href="{{ route('tours.show', $tour->id) }}" class="btn btn-info btn-sm">View</a>
-                </td>
-                <td>
-                    <a href="{{ route('checkout', ['tourId' => $tour->id]) }}" class="btn btn-success">Book now</a>
+                    <a href="{{ route('admin.tours.show', $tour->id) }}" class="btn btn-info btn-sm">View</a>
+                    <a href="{{ route('admin.tours.edit', $tour->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                    <form action="{{ route('admin.tours.destroy', $tour->id) }}" method="POST" class="d-inline">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">
+                            Delete
+                        </button>
+                    </form>
                 </td>
             </tr>
             @endforeach

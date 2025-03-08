@@ -3,7 +3,7 @@
         <h5 class="card-title">Update Profile Information</h5>
         <p class="text-muted">Update your account's profile details.</p>
 
-        <form method="post" action="{{ route('profile.update') }}">
+        <form method="post" action="{{ route('user.profile.update') }}">
             @csrf
             @method('patch')
 

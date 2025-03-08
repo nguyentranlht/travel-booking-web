@@ -11,7 +11,7 @@
     </div>
     <div class="account-tabs">
         <button class="text-dark btn btn-success ">Account</button>
-        <a href="{{ route('profile.edit') }}">
+        <a href="{{ route('user.profile.edit') }}">
             <button class="text-dark btn btn-success">Settings</button>
         </a>
         <button class="text-dark btn btn-success">History</button>
