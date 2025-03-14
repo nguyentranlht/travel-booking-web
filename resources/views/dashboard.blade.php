@@ -10,7 +10,6 @@
         </div>
     </div>
     <div class="account-tabs">
-        <button class="text-dark btn btn-success ">Account</button>
         <a href="{{ route('user.profile.edit') }}">
             <button class="text-dark btn btn-success">Settings</button>
         </a>
