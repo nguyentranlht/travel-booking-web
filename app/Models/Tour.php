@@ -10,6 +10,7 @@ class Tour extends Model
 
     protected $fillable = [
         'title',
+        'user_id',
         'description',
         'destinations',
         'images',
@@ -21,4 +22,9 @@ class Tour extends Model
         'status',
         'price'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

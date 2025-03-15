@@ -52,4 +52,9 @@ class User extends Authenticatable implements MustVerifyEmail
             'password' => 'hashed',
         ];
     }
+    
+    public function tours()
+    {
+        return $this->hasMany(Tour::class);
+    }
 }
