@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TourController;
@@ -28,6 +29,7 @@ Route::middleware('auth')->group(function () {
     });
 });
 
+Route::get('/home', [HomeController::class, 'home'])->name('tours.home');
 Route::get('/tours',[TourController::class, 'index'])->name('tours.index');
 Route::get('/tours/{id}', [TourController::class, 'show'])->name('tours.show');
 

@@ -1,6 +1,6 @@
 <header class="header navbar">
     <div class="left-section">
-        <a href="{{ route('tours.index') }}" class="find-flight">Find Tour</a>
+        <a href="{{ route('tours.home') }}" class="find-flight">Find Tour</a>
         <a href="#" class="find-stays">Find Stays</a>
     </div>
     <div class="logo">
