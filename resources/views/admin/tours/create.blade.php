@@ -47,7 +47,11 @@
 
         <div class="mb-3">
             <label class="form-label">Number of Guests</label>
-            <input type="number" name="number_of_guests" class="form-control" required>
+            <input type="number" name="number_of_guests" id="number_of_guests" class="form-control" min="1" required>        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Available Seats</label>
+            <input type="number" name="available_seats" id="available_seats" class="form-control" readonly>
         </div>
 
         <div class="mb-3">
@@ -68,3 +72,15 @@
     </form>
 </div>
 @endsection
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let numberOfGuestsInput = document.getElementById('number_of_guests');
+        let availableSeatsInput = document.getElementById('available_seats');
+
+        if (numberOfGuestsInput && availableSeatsInput) {
+            numberOfGuestsInput.addEventListener('input', function () {
+                availableSeatsInput.value = numberOfGuestsInput.value;
+            });
+        }
+    });
+</script>

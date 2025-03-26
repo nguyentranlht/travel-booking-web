@@ -32,6 +32,7 @@ class TourRequest extends FormRequest
             'end_time' => 'required|date|after_or_equal:start_time',
             'schedule' => 'required|string',
             'number_of_guests' => 'required|integer|min:1',
+            'available_seats' => 'required|integer|min:1',
             'status' => 'required|in:active,canceled,finished',
             'price' => 'required|numeric|min:0',
         ];

@@ -23,9 +23,10 @@ class PaymentService
         Stripe::setApiKey(Config::get('services.stripe.secret'));
     }
 
-    public function createCheckoutSession($tourId, $userId)
+    public function createCheckoutSession($tourId, $userId, $guestCount)
     {
         $tour = $this->tourRepository->findById($tourId);
+        $totalAmount = $tour->price * $guestCount;
 
         $session = Session::create([
             'payment_method_types' => ['card'],
@@ -35,30 +36,40 @@ class PaymentService
                     'product_data' => [
                         'name' => $tour->title,
                     ],
-                    'unit_amount' => $tour->price * 100,
+                    'unit_amount' => $totalAmount * 100,
                 ],
                 'quantity' => 1,
             ]],
             'mode' => 'payment',
-            'success_url' => route('payments.success', ['tour_id' => $tour->id, 'user_id' => $userId]),
+            'success_url' => route('payments.success', ['tour_id' => $tour->id, 'user_id' => $userId, 'guest_count' => $guestCount]),
             'cancel_url' => route('payments.cancel'),
         ]);
 
         return $session->url;
     }
 
-    public function handlePaymentSuccess($tourId, $userId)
+    public function handlePaymentSuccess($tourId, $userId, $guestCount)
     {
         $tour = $this->tourRepository->findById($tourId);
+        $totalAmount = $tour->price * $guestCount;
+        
+        if ($guestCount > $tour->available_seats) {
+            throw new \Exception('Payment successful, but no available seats left.');
+        }
 
         // Create booking
         $booking = $this->bookingRepository->create([
             'user_id' => $userId,
             'tour_id' => $tour->id,
+            'guest_count' => $guestCount,
             'start_date' => $tour->start_time,
             'end_date' => $tour->end_time,
-            'total_amount' => $tour->price,
+            'total_amount' => $totalAmount,
             'status' => 'confirmed',
+        ]);
+        
+        $tour->update([
+            'available_seats' => $tour->available_seats - $guestCount,
         ]);
 
         // Save payment
