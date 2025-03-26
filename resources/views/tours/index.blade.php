@@ -83,10 +83,16 @@
                                 <!-- Footer -->
                                 <div class="tour-footer d-flex justify-content-between align-items-center mt-3">
                                     <span class="tour-price">${{ number_format($tour->price, 2) }}/person</span>
-                                    <a href="{{ route('checkout', ['tourId' => $tour->id]) }}" class="btn btn-success">
-                                        Book Now
-                                    </a>
+                                
+                                    @if($tour->available_seats > 0)
+                                        <a href="{{ route('checkout', ['tourId' => $tour->id]) }}" class="btn btn-success">
+                                            Book Now
+                                        </a>
+                                    @else
+                                        <button class="btn btn-secondary" disabled>Sold Out!</button>
+                                    @endif
                                 </div>
+                                
                             </div>
                         </div>
                     @endforeach

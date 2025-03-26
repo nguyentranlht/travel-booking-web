@@ -19,6 +19,7 @@ class Tour extends Model
         'end_time',
         'schedule',
         'number_of_guests',
+        'available_seats',
         'status',
         'price'
     ];

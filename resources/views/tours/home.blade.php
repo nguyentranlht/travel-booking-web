@@ -42,9 +42,7 @@
                                     <h5 class="travel-title">{{ $tour->title }}</h5>
                                     <span class="travel-price">${{ number_format($tour->price, 2) }}</span>
                                     <div class="travel-footer">
-                                        <a href="{{ route('checkout', ['tourId' => $tour->id]) }}" class="travel-button">
-                                            Book a Tour
-                                        </a>
+                                        
                                     </div>
                                 </div>
                             </div>

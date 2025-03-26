@@ -57,13 +57,25 @@
                 <p><i class="fas fa-clock text-warning"></i> Start: <strong>{{ date('H:i d/m/Y', strtotime($tour->start_time)) }}</strong></p>
                 <p><i class="fas fa-clock text-danger"></i> End: <strong>{{ date('H:i d/m/Y', strtotime($tour->end_time)) }}</strong></p>
                 <p><i class="fas fa-users text-info"></i> Max guests: <strong>{{ $tour->number_of_guests }}</strong></p>
-                <form action="{{ route('checkout', ['tourId' => $tour->id]) }}" method="get">
+                <p><i class="fas fa-users text-secondary"></i> Available seats: <strong>{{ $tour->available_seats }}</strong></p>
+                <form action="{{ route('checkout', ['tourId' => $tour->id]) }}" method="GET">
                     @csrf
-                    <div class="mb-3">
-                        <label for="guests" class="form-label">Number of Guests</label>
-                        <input type="number" id="guests" name="guests" class="form-control" value="1" min="1" max="{{ $tour->number_of_guests }}">
-                    </div>
-                    <button type="submit" class="btn btn-success w-100">Book Now</button>
+                
+                    @if($tour->available_seats > 0)
+                        <div class="mb-3">
+                            <label for="guests" class="form-label">Number of Guests</label>
+                            <input type="number" id="guests" name="guest_count" class="form-control"
+                                   value="1" min="1" max="{{ $tour->available_seats }}" required>
+                        </div>
+                
+                        <button type="submit" class="btn btn-success w-100">
+                            Book Now
+                        </button>
+                    @else
+                        <div class="alert alert-secondary text-center p-3">
+                            <strong class="text-dark">Sold Out!</strong> No more available seats for this tour.
+                        </div>
+                    @endif
                 </form>
             </div>
         </div>
