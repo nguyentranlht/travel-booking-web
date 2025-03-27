@@ -13,13 +13,16 @@ class PaymentService
 {
     protected $paymentRepository;
     protected $tourRepository;
-    protected $bookingRepository;
+    protected $bookingService;
 
-    public function __construct(PaymentRepository $paymentRepository, TourRepository $tourRepository, BookingRepository $bookingRepository)
+    public function __construct(PaymentRepository $paymentRepository, 
+                                TourRepository $tourRepository, 
+                                BookingService $bookingService
+                                )
     {
         $this->paymentRepository = $paymentRepository;
         $this->tourRepository = $tourRepository;
-        $this->bookingRepository = $bookingRepository;
+        $this->bookingService = $bookingService;
         Stripe::setApiKey(Config::get('services.stripe.secret'));
     }
 
@@ -58,16 +61,8 @@ class PaymentService
         }
 
         // Create booking
-        $booking = $this->bookingRepository->create([
-            'user_id' => $userId,
-            'tour_id' => $tour->id,
-            'guest_count' => $guestCount,
-            'start_date' => $tour->start_time,
-            'end_date' => $tour->end_time,
-            'total_amount' => $totalAmount,
-            'status' => 'confirmed',
-        ]);
-        
+        $booking = $this->bookingService->createBooking($userId, $tourId, $guestCount, 'confirmed');
+
         $tour->update([
             'available_seats' => $tour->available_seats - $guestCount,
         ]);

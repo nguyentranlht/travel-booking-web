@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfileController;
@@ -20,6 +21,9 @@ Route::middleware('auth')->group(function () {
         Route::get('/profile', [ProfileController::class, 'edit'])->name('user.profile.edit');
         Route::patch('/profile', [ProfileController::class, 'update'])->name('user.profile.update');
         Route::delete('/profile', [ProfileController::class, 'destroy'])->name('user.profile.destroy');
+
+        Route::get('/bookings', [BookingController::class, 'index'])->name('user.bookings.index');
+        Route::get('/bookings/{id}', [BookingController::class, 'show'])->name('user.bookings.show');
 
         Route::prefix('/payments')->group(function () {
             Route::get('/checkout/{tourId}', [PaymentController::class, 'checkout'])->name('checkout');
