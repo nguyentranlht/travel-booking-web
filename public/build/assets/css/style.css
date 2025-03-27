@@ -406,6 +406,9 @@ footer {
     cursor: pointer;
     border-radius: 5px;
 }
+.account-tabs button:hover {
+    color: white !important;
+}
 
 .account-tabs .active {
     background: #4caf50;
@@ -813,4 +816,146 @@ footer {
 /*Tour home*/
 .travel-destinations {
     margin-bottom: 50px; /* Hoặc giá trị lớn hơn nếu cần */
+}
+
+/*Booking show*/
+/* Booking Container */
+.booking-container {
+    width: 80%;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Booking Card */
+.booking-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-radius: 8px;
+    width: 100%;
+    background: #EAF3EC;
+}
+
+/* Booking Date Section */
+.booking-date-section {
+    width: 30%;
+    background: #EBF6F2;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.booking-date {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Booking Info Section */
+.booking-info-section {
+    width: 70%;
+    background: #78A678;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Booking Header */
+.booking-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.user-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Booking Details */
+.booking-details {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 0;
+}
+
+.detail-item {
+    text-align: center;
+}
+
+.detail-item i {
+    font-size: 18px;
+}
+
+.detail-item span {
+    display: block;
+    font-size: 12px;
+}
+
+/* Booking Footer */
+.booking-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Giữ tất cả bên trái */
+    padding-top: 10px;
+    width: 100%;
+    position: relative; /* Để căn barcode về mép phải */
+}
+
+.booking-id-container {
+    display: flex;
+    flex-direction: column; /* Xếp Code và ID theo chiều dọc */
+    align-items: flex-start; /* Căn về mép trái */
+    text-align: left;
+}
+
+.booking-code {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.booking-id {
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.barcode {
+    width: 180px; /* Tăng kích thước */
+    height: auto;
+    position: absolute;
+    right: 0;
+}
+
+.booking-terms {
+    margin-top: 20px; /* Tạo khoảng cách giữa phần Terms với phần trên */
+    padding: 15px; /* Thêm padding để nội dung không bị sát viền */
+}
+
+.booking-terms h3 {
+    margin-bottom: 10px; /* Tạo khoảng cách giữa tiêu đề và danh sách */
+    font-size: 18px; /* Tăng kích thước tiêu đề nếu cần */
+    font-weight: bold;
+}
+
+.booking-terms ul,
+.booking-terms ol {
+    padding-left: 25px; /* Đẩy danh sách vào một chút để ngay hàng */
+    margin-top: 10px;
+}
+
+.booking-terms li {
+    margin-bottom: 8px; /* Giãn cách giữa các dòng */
+    line-height: 1.6; /* Giúp dòng chữ dễ đọc hơn */
 }

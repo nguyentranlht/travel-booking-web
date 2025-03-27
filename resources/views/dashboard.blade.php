@@ -11,9 +11,11 @@
     </div>
     <div class="account-tabs">
         <a href="{{ route('user.profile.edit') }}">
-            <button class="text-dark btn btn-success">Settings</button>
+            <button class="text-dark btn btn-success" style="transition: 0.3s;">Settings</button>
         </a>
-        <button class="text-dark btn btn-success">History</button>
+        <a href="{{ route('user.bookings.index') }}">
+            <button class="text-dark btn btn-success" style="transition: 0.3s;">Booking History</button>
+        </a>
     </div>
     <section class="account-details">
         <h3>Account</h3>

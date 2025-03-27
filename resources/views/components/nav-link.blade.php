@@ -1,11 +1,44 @@
-@props(['active'])
+@if ($paginator->hasPages())
+    <nav class="mt-4">
+        <ul class="pagination justify-content-center">
+            {{-- Nút Previous --}}
+            @if ($paginator->onFirstPage())
+                <li class="page-item disabled">
+                    <span class="page-link">←</span>
+                </li>
+            @else
+                <li class="page-item">
+                    <a href="{{ $paginator->previousPageUrl() }}" class="page-link">←</a>
+                </li>
+            @endif
 
-@php
-$classes = ($active ?? false)
-            ? 'inline-flex items-center px-1 pt-1 border-b-2 border-indigo-400 text-sm font-medium leading-5 text-gray-900 focus:outline-none focus:border-indigo-700 transition duration-150 ease-in-out'
-            : 'inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out';
-@endphp
+            {{-- Hiển thị số trang --}}
+            @foreach ($elements as $element)
+                @if (is_array($element))
+                    @foreach ($element as $page => $url)
+                        @if ($page == $paginator->currentPage())
+                            <li class="page-item active">
+                                <span class="page-link">{{ $page }}</span>
+                            </li>
+                        @else
+                            <li class="page-item">
+                                <a href="{{ $url }}" class="page-link">{{ $page }}</a>
+                            </li>
+                        @endif
+                    @endforeach
+                @endif
+            @endforeach
 
-<a {{ $attributes->merge(['class' => $classes]) }}>
-    {{ $slot }}
-</a>
+            {{-- Nút Next --}}
+            @if ($paginator->hasMorePages())
+                <li class="page-item">
+                    <a href="{{ $paginator->nextPageUrl() }}" class="page-link">→</a>
+                </li>
+            @else
+                <li class="page-item disabled">
+                    <span class="page-link">→</span>
+                </li>
+            @endif
+        </ul>
+    </nav>
+@endif
