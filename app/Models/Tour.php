@@ -28,4 +28,14 @@ class Tour extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function likes()
+    {
+        return $this->hasMany(Like::class, 'tour_id');
+    }
+
+    public function isLikedByUser($user_id)
+    {
+        return $this->likes()->where('user_id', $user_id)->exists();
+    }
 }

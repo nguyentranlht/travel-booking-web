@@ -45,14 +45,14 @@
                 </div>
             </aside>
 
-            <!-- tour list -->
             <!-- Tour List -->
             <section class="col-md-9">
                 <div class="tour-list">
                     <h3 class="mb-3">Showing {{ $tours->count() }} tours</h3>
 
                     @foreach ($tours as $tour)
-                        <div class="tour-item mb-4 p-3 border rounded d-flex align-items-center shadow-sm">
+                        <div class="tour-item mb-4 p-3 d-flex align-items-center shadow-sm">
+
                             <!-- Ảnh Tour -->
                             <div class="tour-image-container">
                                 <a href="{{ route('tours.show', $tour->id) }}">
@@ -60,6 +60,9 @@
                                         class="tour-image">
                                 </a>
                                 {{-- <span class="tour-badge">{{ count(explode(',', $tour->images)) }} images</span> --}}
+                            </div>
+                            <div class="like-button-container">
+                                <x-like-button :tour="$tour" />
                             </div>
 
                             <!-- Thông Tin Tour -->
@@ -77,7 +80,7 @@
                                     <span class="tour-rating">⭐ 4.5 (371 reviews)</span>
                                     <span class="tour-amenities">🌟 20+ Amenities</span>
                                 </div>
-
+                                
                                 <p class="tour-description text-muted">{{ Str::limit($tour->description, 100) }}</p>
 
                                 <!-- Footer -->
@@ -91,8 +94,7 @@
                                     @else
                                         <button class="btn btn-secondary" disabled>Sold Out!</button>
                                     @endif
-                                </div>
-                                
+                                </div> 
                             </div>
                         </div>
                     @endforeach

@@ -8,7 +8,7 @@ use Illuminate\Contracts\View\View;
 
 class HomeController extends Controller
 {
-    public function home() : View
+    public function home(): View
     {
         $tours = Tour::latest()->take(3)->get();
         return view('tours.home', compact('tours'));
