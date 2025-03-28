@@ -17,19 +17,19 @@ class TourController extends Controller
         $this->tourService = $tourService;
     }
 
-    public function index() : View
+    public function index(): View
     {
         $tours = $this->tourService->getAllTours();
         return view('admin.tours.index', compact('tours'));
     }
 
-    public function show($id) : View
+    public function show($id): View
     {
         $tour = $this->tourService->getTourById($id);
         return view('admin.tours.show', compact('tour'));
     }
 
-    public function create() : View
+    public function create(): View
     {
         return view('admin.tours.create');
     }
@@ -41,19 +41,19 @@ class TourController extends Controller
     }
 
 
-    public function edit($id) : View
+    public function edit($id): View
     {
         $tour = $this->tourService->getTourById($id);
         return view('admin.tours.edit', compact('tour'));
     }
 
-    public function update(TourRequest $request, $id) : RedirectResponse
+    public function update(TourRequest $request, $id): RedirectResponse
     {
         $this->tourService->updateTour($id, $request->validated());
         return redirect()->route('admin.tours.index')->with('success', 'Tour updated successfully');
     }
 
-    public function destroy($id) : RedirectResponse
+    public function destroy($id): RedirectResponse
     {
         $this->tourService->deleteTour($id);
         return redirect()->route('admin.tours.index')->with('success', 'Tour deleted successfully');

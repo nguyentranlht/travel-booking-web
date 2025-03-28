@@ -221,6 +221,8 @@ nav a {
 footer {
     background-color: #90ee90;
     padding: 40px 20px;
+    margin-top: auto;
+    padding: 20px 0;
 }
 
 .footer-content {
@@ -673,13 +675,16 @@ footer {
     text-decoration: underline;
 }
 
-
-/* travel-index */
+/* Tour-index */
+/* index */
 .tour-item {
-    background: #fff;
+    position: relative;
+    display: flex;
+    width: 100%;
+    max-width: 1800px;
     border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    transition: 0.3s ease-in-out;
 }
 
 .tour-item:hover {
@@ -688,10 +693,10 @@ footer {
 
 .tour-image-container {
     position: relative;
-    width: 250px;
-    height: 160px;
-    border-radius: 12px;
+    width: 300px; 
+    height: 200px;
     overflow: hidden;
+    border-radius: 10px;
 }
 
 .tour-image {
@@ -958,4 +963,49 @@ footer {
 .booking-terms li {
     margin-bottom: 8px; /* Giãn cách giữa các dòng */
     line-height: 1.6; /* Giúp dòng chữ dễ đọc hơn */
+}
+
+/*likes*/
+.like-btn {
+    width: 40px;
+    height: 40px;
+    background: #f0f0f0; /* Màu nền nhạt */
+    border: none;
+    border-radius: 8px; /* Bo góc ô vuông */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out, transform 0.2s;
+}
+
+.like-btn:hover {
+    transform: scale(1.1);
+}
+
+.like-icon {
+    font-size: 20px;
+    color: #aaa; /* Màu icon khi chưa like */
+    transition: color 0.2s ease-in-out;
+}
+
+/* Khi đã like */
+.liked {
+    background: #ffebee; /* Màu nền khi đã like */
+}
+
+.liked .like-icon {
+    color: #ff4d4d; /* Màu đỏ khi like */
+}
+.like-button-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.8); /* Tạo nền trắng mờ */
+    border-radius: 50%;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

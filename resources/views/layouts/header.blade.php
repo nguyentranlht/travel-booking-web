@@ -8,7 +8,7 @@
     </div>
     <div class="right-section user-menu">
         @auth
-            <a href="#" class="favorite-icon">
+            <a href="{{ route('user.liked.tours') }}" class="favorite-icon">
                 <img src="{{ asset('build/assets/img/heart-icon.png') }}" alt="Favorites">
             </a>
             <div class="dropdown">

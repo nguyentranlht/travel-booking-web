@@ -22,13 +22,13 @@ class BookingController extends Controller
         $userId = Auth::id();
         $bookings = $this->bookingService->getUserBookings($userId);
         
-        return view('booking.index', compact('bookings'));
+        return view('bookings.index', compact('bookings'));
     }
 
     public function show($id) : View
     {
         $booking = $this->bookingService->getBooking($id);
 
-        return view('booking.show', compact('booking'));
+        return view('bookings.show', compact('booking'));
     }
 }

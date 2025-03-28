@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LikeController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TourController;
@@ -17,6 +18,8 @@ Route::get('/dashboard', function () {
 
 Route::middleware('auth')->group(function () {
 
+    Route::post('/like/{tourId}', [LikeController::class, 'toggleLike'])->name('like.toggle');
+
     Route::prefix('user')->group(function () {
         Route::get('/profile', [ProfileController::class, 'edit'])->name('user.profile.edit');
         Route::patch('/profile', [ProfileController::class, 'update'])->name('user.profile.update');
@@ -24,6 +27,8 @@ Route::middleware('auth')->group(function () {
 
         Route::get('/bookings', [BookingController::class, 'index'])->name('user.bookings.index');
         Route::get('/bookings/{id}', [BookingController::class, 'show'])->name('user.bookings.show');
+
+        Route::get('/liked-tours', [LikeController::class, 'likedTours'])->name('user.liked.tours');
 
         Route::prefix('/payments')->group(function () {
             Route::get('/checkout/{tourId}', [PaymentController::class, 'checkout'])->name('checkout');

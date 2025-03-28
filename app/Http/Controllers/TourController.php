@@ -15,13 +15,13 @@ class TourController extends Controller
         $this->tourService = $tourService;
     }
 
-    public function index() : View
+    public function index(): View
     {
         $tours = $this->tourService->getAllTours();
         return view('tours.index', compact('tours'));
     }
 
-    public function show($id) : View
+    public function show($id): View
     {
         $tour = $this->tourService->getTourById($id);
         return view('tours.show', compact('tour'));

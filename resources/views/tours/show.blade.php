@@ -12,7 +12,7 @@
                     <h1 class="text-white fw-bold">{{ $tour->title }}</h1>
                 </div>
             </div>
-
+            
             <!-- Image Gallery -->
             <div class="row mt-3">
                 @foreach (explode(',', $tour->images) as $image)
@@ -58,6 +58,9 @@
                 <p><i class="fas fa-clock text-danger"></i> End: <strong>{{ date('H:i d/m/Y', strtotime($tour->end_time)) }}</strong></p>
                 <p><i class="fas fa-users text-info"></i> Max guests: <strong>{{ $tour->number_of_guests }}</strong></p>
                 <p><i class="fas fa-users text-secondary"></i> Available seats: <strong>{{ $tour->available_seats }}</strong></p>
+                <div class="like-button-container">
+                    <x-like-button :tour="$tour" />
+                </div>
                 <form action="{{ route('checkout', ['tourId' => $tour->id]) }}" method="GET">
                     @csrf
                 
