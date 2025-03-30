@@ -85,7 +85,7 @@
 
                                 <!-- Footer -->
                                 <div class="tour-footer d-flex justify-content-between align-items-center mt-3">
-                                    <span class="tour-price">${{ number_format($tour->price, 2) }}/person</span>
+                                    <span class="tour-price">{{ number_format($tour->price, 2) }}.vnd/person</span>
                                 
                                     @if($tour->available_seats > 0)
                                         <a href="{{ route('checkout', ['tourId' => $tour->id]) }}" class="btn btn-success">

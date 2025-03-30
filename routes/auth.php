@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\TourController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\ConfirmablePasswordController;
@@ -11,6 +11,7 @@ use App\Http\Controllers\Auth\PasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Http\Controllers\TourRider\TourRiderController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
@@ -60,7 +61,8 @@ Route::middleware('auth')->group(function () {
         ->name('logout');
 
     Route::prefix('admin')->middleware(['role:admin'])->group(function () {
-        Route::get('/dashboard',[DashboardController::class, 'index'])->name('admin.dashboard');
+        Route::get('/dashboard',[AdminDashboardController::class, 'index'])->name('admin.dashboard');
+        
         Route::resource('/tours', TourController::class)->names([
             'index' => 'admin.tours.index',
             'create' => 'admin.tours.create',
@@ -69,6 +71,20 @@ Route::middleware('auth')->group(function () {
             'update' => 'admin.tours.update',
             'destroy' => 'admin.tours.destroy',
             'show' => 'admin.tours.show',
+        ]);;
+    });    
+
+    Route::prefix('tour_rider')->middleware(['role:tour_rider'])->group(function () {
+        Route::get('/dashboard',[TourRiderController::class, 'index'])->name('tour_rider.dashboard');
+
+        Route::resource('/tours', TourRiderController::class)->names([
+            'index' => 'tour_rider.tours.index',
+            'create' => 'tour_rider.tours.create',
+            'store' => 'tour_rider.tours.store',
+            'edit' => 'tour_rider.tours.edit',
+            'update' => 'tour_rider.tours.update',
+            'destroy' => 'tour_rider.tours.destroy',
+            'show' => 'tour_rider.tours.show',
         ]);;
     });
 });

@@ -35,7 +35,7 @@ class PaymentService
             'payment_method_types' => ['card'],
             'line_items' => [[
                 'price_data' => [
-                    'currency' => 'usd',
+                    'currency' => 'vnd',
                     'product_data' => [
                         'name' => $tour->title,
                     ],
@@ -59,6 +59,8 @@ class PaymentService
         if ($guestCount > $tour->available_seats) {
             throw new \Exception('Payment successful, but no available seats left.');
         }
+        
+        
 
         // Create booking
         $booking = $this->bookingService->createBooking($userId, $tourId, $guestCount, 'confirmed');

@@ -52,7 +52,7 @@
         <!-- Right Column: Booking Section -->
         <div class="col-md-4">
             <div class="p-4 bg-white rounded shadow-sm sticky-top">
-                <h3 class="fw-bold text-success">${{ number_format($tour->price, 2) }}/person</h3>
+                <h3 class="fw-bold text-success">{{ number_format($tour->price, 2) }}.vnd/person</h3>
                 <p><i class="fas fa-calendar-alt text-primary"></i> <strong>{{ $tour->number_of_days }}</strong> days</p>
                 <p><i class="fas fa-clock text-warning"></i> Start: <strong>{{ date('H:i d/m/Y', strtotime($tour->start_time)) }}</strong></p>
                 <p><i class="fas fa-clock text-danger"></i> End: <strong>{{ date('H:i d/m/Y', strtotime($tour->end_time)) }}</strong></p>
