@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travel Website</title>
     <link rel="stylesheet" href="{{ asset('build/assets/css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
 
 <body>
-    <header>
+    <header class="home-header">
         <nav>
             <div class="logo">
             </div>
@@ -138,7 +140,70 @@
     </section>
 
     @include('layouts.footer')
-    
-</body>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+</body>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+// Hiệu ứng cho tiêu đề và mô tả trên hero section
+gsap.from(".hero h1, .hero h2, .hero p", {
+    opacity: 0,
+    y: 50, // Di chuyển từ dưới lên
+    duration: 1,
+    ease: "power3.out",
+    stagger: 0.3
+});
+
+// Hiệu ứng cho các destination card khi cuộn trang
+gsap.from(".destination-card", {
+    scrollTrigger: {
+        trigger: ".destination-card",
+        start: "top 80%", // Khi nào kích hoạt
+        toggleActions: "play none none none"
+    },
+    opacity: 0,
+    y: 50, // Di chuyển từ dưới lên
+    duration: 1.2,
+    ease: "power2.out",
+    stagger: 0.2
+});
+
+// Hiệu ứng cho các service cards khi cuộn trang
+gsap.from(".services .service-card", {
+    scrollTrigger: {
+        trigger: ".services",
+        start: "top 75%",
+        toggleActions: "play none none none"
+    },
+    opacity: 0,
+    scale: 0.8, // Thu nhỏ và phóng to
+    duration: 1.2,
+    ease: "elastic.out(1, 0.5)",
+    stagger: 0.3
+});
+
+// Hiệu ứng cho explore section
+gsap.from(".explore-grid img", {
+    scrollTrigger: {
+        trigger: ".explore",
+        start: "top 75%",
+        toggleActions: "play none none none"
+    },
+    opacity: 0,
+    y: 50, // Di chuyển từ dưới lên
+    duration: 1.2,
+    ease: "power3.out",
+    stagger: 0.2
+});
+
+</script>
 </html>

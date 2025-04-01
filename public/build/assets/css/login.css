@@ -1,9 +1,15 @@
 .login {
-    position: relative;
-    width: 1440px;
-    height: 1024px;
-    background-color: #76b16880;
-  }
+  position: relative;
+  width: 100vw; /* Chiều rộng toàn màn hình */
+  height: 100vh; /* Chiều cao toàn màn hình */
+  background-color: #26501c80; /* Giữ nguyên màu nền */
+  margin: 0; /* Loại bỏ khoảng trắng mặc định */
+  padding: 0; /* Loại bỏ padding nếu có */
+  overflow: hidden; /* Đảm bảo không có cuộn nếu nội dung vượt quá */
+  padding-left: 50px;
+  transition: all 0.3s ease-in-out; /* Chuyển cảnh mượt mà */
+}
+
   
   .login .group {
     position: absolute;

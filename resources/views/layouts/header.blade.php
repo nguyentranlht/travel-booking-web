@@ -3,7 +3,6 @@
         @auth
             @if(auth()->user()->role === 'user' || auth()->user()->role === 'tour_rider')
                 <a href="{{ route('tours.home') }}" class="find-flight">Find Tour</a>
-                <a href="#" class="find-stays">Find Stays</a>
             @endif
         @endauth
     </div>

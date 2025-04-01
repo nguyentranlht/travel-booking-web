@@ -20,7 +20,7 @@
         </div>
     </div>
 
-    <div class="row mt-4">
+    <div class="row mb-5 pb-5">
         <div class="col-md-12">
             @include('profile.partials.delete-user-form')
         </div>

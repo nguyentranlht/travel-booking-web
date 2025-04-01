@@ -1,12 +1,12 @@
 <footer class="footer">
     <div class="footer-container">
         <div class="footer-left">
-            <img src="logo.png" alt="Logo" class="footer-logo">
+            <img src="{{ asset('build/assets/img/logo.png') }}" alt="Logo" class="footer-logo">
             <p>Travel helps companies manage payments easily.</p>
             <div class="footer-social-icons">
-                <a href="#" class="footer-social-icon">in</a>
-                <a href="#" class="footer-social-icon">f</a>
-                <a href="#" class="footer-social-icon">yt</a>
+                <a href="#" class="footer-social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="footer-social-icon"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="footer-social-icon"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
         <div class="footer-middle">

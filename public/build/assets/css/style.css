@@ -3,7 +3,7 @@ body {
     font-family: sans-serif;
 }
 
-header {
+.home-header {
     background-image: url('img/Rectangle 31.png');
     background-size: cover;
     background-position: center;
@@ -248,7 +248,7 @@ footer {
 .footer-links a {}
 
 .navbar {
-    background-color: #90ee90;
+    background-color:#26501c80;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -446,7 +446,7 @@ footer {
 
 
 .footer {
-    background-color: #76B168; /* Màu nền xanh nhạt */
+    background-color: #26501c80; /* Màu nền xanh nhạt */
     padding: 40px 20px;
 }
 
