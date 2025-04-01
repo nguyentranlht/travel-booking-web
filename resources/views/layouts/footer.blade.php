@@ -1,6 +1,7 @@
 <footer class="footer">
     <div class="footer-container">
-        <div class="footer-left">
+        <!-- Left Section -->
+        <div class="footer-left" data-aos="fade-right">
             <img src="{{ asset('build/assets/img/logo.png') }}" alt="Logo" class="footer-logo">
             <p>Travel helps companies manage payments easily.</p>
             <div class="footer-social-icons">
@@ -9,7 +10,9 @@
                 <a href="#" class="footer-social-icon"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
-        <div class="footer-middle">
+
+        <!-- Middle Section -->
+        <div class="footer-middle" data-aos="fade-up">
             <div class="footer-links">
                 <h3>Company</h3>
                 <ul>
@@ -29,13 +32,16 @@
                 </ul>
             </div>
         </div>
-        <div class="footer-right">
+
+        <!-- Right Section -->
+        <div class="footer-right" data-aos="fade-left">
             <h3>Join Our Newsletter</h3>
             <input type="email" class="footer-input" placeholder="Your email address">
             <button class="footer-button">Subscribe</button>
             <p>*Will send you weekly updates for your better tour packages.</p>
         </div>
     </div>
+
     <div class="footer-copyright">
         <p>Copyright @ Xpro 2022. All Rights Reserved.</p>
     </div>

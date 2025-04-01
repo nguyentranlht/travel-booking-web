@@ -204,6 +204,5 @@ gsap.from(".explore-grid img", {
     ease: "power3.out",
     stagger: 0.2
 });
-
 </script>
 </html>

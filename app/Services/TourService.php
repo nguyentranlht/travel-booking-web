@@ -45,6 +45,7 @@ class TourService
             // Nếu không upload ảnh mới, giữ nguyên ảnh cũ
             $data['images'] = $tour->images;
         }
+        
         return $this->tourRepository->update($id, $data);
     }
 

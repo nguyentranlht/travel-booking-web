@@ -35,9 +35,12 @@ class PaymentController extends Controller
 
     public function success(Request $request)
     {
-        $this->paymentService->handlePaymentSuccess($request->tour_id, $request->user_id, $request->guest_count);
+        $bookingId = $this->paymentService->handlePaymentSuccess($request->tour_id, $request->user_id, $request->guest_count);
 
-        return view('payments.success')->with('success', 'Thanh toán thành công! Booking đã được tạo.');
+        return view('payments.success', [
+            'bookingId' => $bookingId,
+            'success' => 'Thanh toán thành công! Booking đã được tạo.',
+        ]);
     }
 
     public function cancel()

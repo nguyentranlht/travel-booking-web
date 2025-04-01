@@ -2,10 +2,15 @@
 
 @section('content')
     <div class="container mt-5">
-        <h2 class="text-center mb-4">Your Favorite Tours</h2>
+        <h2 class="text-center mb-4" data-aos="fade-up">Your Favorite Tours</h2>
         <div class="row">
+            <div class="mb-4">
+                <a href="javascript:history.back()" class="btn btn-outline-primary">
+                    <i class="fa-solid fa-arrow-left"></i> Back
+                </a>
+            </div>
             @forelse($likedTours as $tour)
-                <div class="col-lg-4 col-md-6 mb-4">
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="{{ $loop->iteration * 100 }}">
                     <div class="card shadow-sm border-0">
                         <div class="position-relative">
                             <!-- Picture Tour -->
@@ -14,7 +19,6 @@
                                     <img src="{{ $tour->images ? asset('storage/' . explode(',', $tour->images)[0]) : 'https://via.placeholder.com/300x200' }}"
                                         class="tour-image">
                                 </a>
-                                {{-- <span class="tour-badge">{{ count(explode(',', $tour->images)) }} images</span> --}}
                             </div>
                             
                             <!-- Like -->
@@ -35,7 +39,7 @@
                     </div>
                 </div>
             @empty
-                <div class="col-12 text-center">
+                <div class="col-12 text-center" data-aos="fade-up">
                     <p class="text-muted">You haven't liked any tours yet.</p>
                     <a href="{{ route('tours.index') }}" class="btn btn-primary">Explore Tours</a>
                 </div>
@@ -45,4 +49,15 @@
             {{ $likedTours->links('components.nav-link') }}
         </div>
     </div>
+@endsection
+
+@section('scripts')
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 1000, // Animation duration
+            easing: 'ease-in-out', // Animation easing
+            once: true, // Whether the animation should happen once
+        });
+    </script>
 @endsection
