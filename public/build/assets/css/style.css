@@ -1009,3 +1009,86 @@ footer {
     align-items: center;
     justify-content: center;
 }
+
+
+/* Dashboard user */
+.account-page {
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+}
+.profile-header {
+    background-color: #f8f9fa;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.profile-info h2 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+.profile-info p {
+    font-size: 1rem;
+    color: #6c757d;
+}
+.account-tabs button {
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+.account-tabs button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+.account-details {
+    margin-top: 30px;
+}
+.account-details h3 {
+    font-size: 1.75rem;
+    font-weight: bold;
+}
+.info-box {
+    background-color: #f1f1f1;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+.info-box label {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.info-box p {
+    font-size: 1.1rem;
+    color: #495057;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.card-body {
+    padding: 1.5rem;
+}
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.card-text {
+    color: #6c757d;
+}
+.btn-outline-primary {
+    border-radius: 50px;
+    font-size: 1rem;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+.btn-outline-primary:hover {
+    background-color: #007bff;
+    color: white;
+}
+.badge {
+    font-size: 1rem;
+    padding: 5px 10px;
+    border-radius: 20px;
+}

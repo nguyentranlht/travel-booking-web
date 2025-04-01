@@ -2,8 +2,15 @@
 
 @section('content')
 <div class="container">
+ <!-- Back Button -->
+    <div class="mb-4">
+        <a href="javascript:history.back()" class="btn btn-outline-primary">
+            <i class="fa-solid fa-arrow-left"></i> Back
+        </a>
+    </div>
     <h2 class="mb-4">Edit Profile</h2>
 
+    
     @if (session('status') === 'profile-updated')
         <div class="alert alert-success">
             Profile updated successfully.

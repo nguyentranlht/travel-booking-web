@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
     <div class="card shadow">
         <div class="card-header bg-primary text-white">
             <h2 class="mb-0">{{ $tour->title }}</h2>
@@ -23,15 +23,19 @@
                     </tr>
                     <tr>
                         <th>Start Time</th>
-                        <td>{{ $tour->start_time }}</td>
+                        <td>{{ date('F d, Y H:i', strtotime($tour->start_time)) }}</td>
                     </tr>
                     <tr>
                         <th>End Time</th>
-                        <td>{{ $tour->end_time }}</td>
+                        <td>{{ date('F d, Y H:i', strtotime($tour->end_time)) }}</td>
                     </tr>
                     <tr>
                         <th>Number of Guests</th>
                         <td>{{ $tour->number_of_guests }}</td>
+                    </tr>
+                    <tr>
+                        <th>Available Seats</th>
+                        <td>{{ $tour->available_seats }}</td>
                     </tr>
                     <tr>
                         <th>Status</th>
@@ -59,13 +63,20 @@
                                     @endforeach
                                 </div>
                             @else
-                                No images available.
+                                <span class="text-muted">No images available.</span>
                             @endif
                         </td>
                     </tr>
                 </tbody>
             </table>
-            <a href="{{ route('admin.tours.index') }}" class="btn btn-secondary">Back</a>
+            <div class="d-flex justify-content-between mt-3">
+                <a href="{{ route('admin.tours.index') }}" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Back
+                </a>
+                <a href="{{ route('admin.tours.edit', $tour->id) }}" class="btn btn-warning">
+                    <i class="fas fa-edit"></i> Edit
+                </a>
+            </div>
         </div>
     </div>
 </div>
