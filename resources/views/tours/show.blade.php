@@ -3,11 +3,12 @@
 @section('content')
 <div class="container my-5">
     <div class="row">
-             <div class="mb-4">
-        <a href="javascript:history.back()" class="btn btn-outline-primary">
-            <i class="fa-solid fa-arrow-left"></i> Back
-        </a>
-    </div>
+        <div class="mb-4">
+            <a href="javascript:history.back()" class="btn btn-outline-primary">
+                <i class="fa-solid fa-arrow-left"></i> Back
+            </a>
+        </div>
+        
         <!-- Left Column: Tour Details -->
         <div class="col-md-8">
             <!-- Hero Section with Title Overlay -->
@@ -23,10 +24,11 @@
                 <div class="swiper-wrapper">
                     @foreach (explode(',', $tour->images) as $image)
                         <div class="swiper-slide">
-                            <img src="{{ asset('storage/' . explode(',', $tour->images)[0]) }}" class="w-100 rounded shadow-sm gallery-image" alt="{{ $tour->title }}" style="height: 150px; object-fit: cover;" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="{{ asset('storage/' . explode(',', $tour->images)[0]) }}">
+                            <img src="{{ asset('storage/' . $image) }}" class="gallery-image rounded shadow-sm" alt="{{ $tour->title }}" style="height: 150px; object-fit: cover;" data-bs-toggle="modal" data-bs-target="#imageModal" data-src="{{ asset('storage/' . $image) }}">
                         </div>
                     @endforeach
                 </div>
+                <!-- Swiper Pagination -->
                 <div class="swiper-pagination"></div>
             </div>
 
@@ -49,7 +51,9 @@
                                 </button>
                             </h2>
                             <div id="day{{ $index }}" class="accordion-collapse collapse {{ $index === 0 ? 'show' : '' }}">
-                                <div class="accordion-body">{{ $day }}</div>
+                                <div class="accordion-body">
+                                    {!! nl2br(e($day)) !!} <!-- Sử dụng nl2br() để giữ định dạng xuống dòng -->
+                                </div>
                             </div>
                         </div>
                     @endforeach
@@ -162,5 +166,28 @@
         transform: scale(1.05);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
+
+    /* Fix image gallery */
+    .swiper-container {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .swiper-wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .swiper-slide {
+        width: calc(33.33% - 10px);
+        /* Adjust width and space between images */
+    }
+
+    .gallery-image {
+        object-fit: cover;
+        height: 150px;
+        width: 100%;
+    }
 </style>
+
 @endsection

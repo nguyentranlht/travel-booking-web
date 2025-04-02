@@ -172,10 +172,7 @@
     align-self: stretch;
     width: 100%;
     flex: 0 0 auto;
-    background-color: var(--neutrals);
-    border-radius: 4px;
-    border: 1px solid;
-    border-color: #79747e;
+    background-color: var(--neutrals); 
   }
   
   .login .state-layer {
@@ -467,4 +464,51 @@
     width: 100%;
     flex: 0 0 auto;
   }
-  
+  /* Xóa bỏ viền thừa bên trong khung nhập liệu */
+.text-field .state-layer, .text-field .state-layer-2 {
+  border: none;
+  box-shadow: none;
+}
+
+/* Giữ lại viền bên ngoài của khung */
+.input-text {
+  border: 1px solid #ccc; /* Viền nhẹ */
+  padding: 12px; /* Điều chỉnh padding cho các ô nhập liệu */
+  border-radius: 8px; /* Làm tròn các góc */
+  width: 100%;
+  background-color: #fff;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+/* Thêm hiệu ứng cho viền khi focus */
+.input-text:focus {
+  border-color: #4CAF50; /* Màu viền khi focus */
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Hiệu ứng shadow nhẹ khi focus */
+}
+
+/* Đảm bảo các label được căn chỉnh đúng */
+.label-text, .label {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 14px;
+  color: #aaa;
+  transition: 0.3s;
+}
+
+.input-text:focus ~ .label-text,
+.input-text:not(:placeholder-shown) ~ .label-text {
+  top: -8px;
+  left: 8px;
+  font-size: 12px;
+  color: #4CAF50; /* Màu label khi input có giá trị */
+}
+
+.input-text:focus ~ .label,
+.input-text:not(:placeholder-shown) ~ .label {
+  top: -8px;
+  left: 8px;
+  font-size: 12px;
+  color: #4CAF50; /* Màu label khi input có giá trị */
+}

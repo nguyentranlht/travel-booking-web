@@ -3,10 +3,13 @@
     <link rel="stylesheet" href="{{ asset('build/assets/css/globals.css') }}" />
     <link rel="stylesheet" href="{{ asset('build/assets/css/styleguide.css') }}" />
     <link rel="stylesheet" href="{{ asset('build/assets/css/login.css') }}" />
+    
+    <!-- Thêm thư viện AOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
 </head>
 
-<div class="login">
-    <div class="group">
+<div class="login" data-aos="fade-up">
+    <div class="group" data-aos="fade-up" data-aos-delay="100">
         <div class="overlap-group">
             <img class="rectangle" src="{{ asset('build/assets/img/Rectangle 20.png') }}" />
             <div class="div"></div>
@@ -17,8 +20,8 @@
             </div>
         </div>
     </div>
-    <div class="logo"></div>
-    <div class="frame-2">
+    <div class="logo" data-aos="fade-down" data-aos-delay="200"></div>
+    <div class="frame-2" data-aos="zoom-in" data-aos-delay="300">
         <div class="frame-3">
             <div class="text-wrapper">Login</div>
             <p class="p">Login to access your Golobe account</p>
@@ -28,7 +31,7 @@
             <div class="frame-4">
                 <div class="frame-5">
                     <!-- Email Field -->
-                    <div class="text-field">
+                    <div class="text-field" data-aos="fade-up" data-aos-delay="400">
                         <div class="state-layer-wrapper">
                             <div class="state-layer">
                                 <div class="content">
@@ -42,7 +45,7 @@
                     </div>
 
                     <!-- Password Field -->
-                    <div class="text-field">
+                    <div class="text-field" data-aos="fade-up" data-aos-delay="500">
                         <div class="div-wrapper">
                             <div class="state-layer-2">
                                 <div class="content">
@@ -50,7 +53,6 @@
                                         placeholder="•••••••••••••••••••••••••" />
                                     <label class="label">Password</label>
                                 </div>
-                                <div class="trailing-icon"><img class="img" src="{{ asset('img/eye-off.svg') }}" />
                                 </div>
                             </div>
                         </div>
@@ -58,7 +60,7 @@
                     </div>
 
                     <!-- Remember Me & Forgot Password -->
-                    <div class="frame-6">
+                    <div class="frame-6" data-aos="fade-up" data-aos-delay="600">
                         <div class="frame-7">
                             <input id="remember_me" type="checkbox"
                                 class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500"
@@ -70,7 +72,7 @@
                 </div>
 
                 <!-- Login Button -->
-                <div class="frame-8">
+                <div class="frame-8" data-aos="fade-up" data-aos-delay="700">
                     <button type="submit" class="button">
                         <div class="style-layer">
                             <div class="button-2">Login</div>
@@ -83,13 +85,20 @@
                 </div>
 
                 <!-- Alternative Login Methods -->
-                <div class="frame-9">
+                {{-- <div class="frame-9" data-aos="fade-up" data-aos-delay="800">
                     <div class="rectangle-3"></div>
                     <div class="text-wrapper-5">Or login with</div>
                     <div class="rectangle-3"></div>
                 </div>
-                <img class="frame-10" src="{{ asset('img/frame-228.svg') }}" />
+                <img class="frame-10" src="{{ asset('img/frame-228.svg') }}" /> --}}
             </div>
         </form>
     </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 800, // Thời gian cho hiệu ứng
+        once: true, // Hiệu ứng chỉ chạy một lần
+    });
+</script>

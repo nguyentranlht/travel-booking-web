@@ -1,3 +1,23 @@
+.register {
+  min-height: 100vh; /* Đảm bảo phần tử register lấp đầy toàn bộ chiều cao của màn hình */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #26501c80; /* Màu nền của toàn bộ trang */
+}
+
+.input-text {
+  color: rgb(25, 25, 25) !important; /* Màu chữ */
+  background-color: rgb(255, 255, 255) !important; /* Màu nền */
+  border-radius: 5px; /* Bo góc */
+  width: 100%; /* Chiều rộng full container */
+  max-width: 400px; /* Giới hạn chiều rộng tối đa */
+  height: 50px; /* Chiều cao của input */
+  padding: 12px 16px; /* Tăng khoảng cách bên trong */
+  font-size: 18px; /* Tăng kích thước chữ */
+  border: 2px solid #ccc; /* Viền input */
+}
+
 .sign-up {
     position: relative;
     width: 1440px;
@@ -44,7 +64,7 @@
     margin-top: -1.00px;
     font-family: var(--tradegothic-bold-40px-font-family);
     font-weight: var(--tradegothic-bold-40px-font-weight);
-    color: #000000;
+    color: #ffffff;
     font-size: var(--tradegothic-bold-40px-font-size);
     letter-spacing: var(--tradegothic-bold-40px-letter-spacing);
     line-height: var(--tradegothic-bold-40px-line-height);
@@ -154,7 +174,7 @@
     margin-top: -1.00px;
     font-family: var(--montserrat-regular-16px-font-family);
     font-weight: var(--montserrat-regular-16px-font-weight);
-    color: #1c1b1f;
+    color: #ffffff;
     font-size: var(--montserrat-regular-16px-font-size);
     letter-spacing: var(--montserrat-regular-16px-letter-spacing);
     line-height: var(--montserrat-regular-16px-line-height);
@@ -171,7 +191,7 @@
     left: -4px;
     background-color: var(--neutrals);
     border: none;
-    color: #1c1b1f;
+    color: #ffffff;
     margin-top: -1.00px;
     font-family: var(--montserrat-regular-14px-font-family);
     font-weight: var(--montserrat-regular-14px-font-weight);
