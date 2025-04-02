@@ -79,18 +79,27 @@
                         </div>
                     </button>
                     <p class="don-t-have-an">
-                        <span class="span">Don’t have an account? </span>
+                        <span class="span">Don't have an account? </span>
                         <a href="{{ route('register') }}" class="text-wrapper-4">Sign up</a>
                     </p>
                 </div>
 
                 <!-- Alternative Login Methods -->
-                {{-- <div class="frame-9" data-aos="fade-up" data-aos-delay="800">
+                <div class="frame-9" data-aos="fade-up" data-aos-delay="800">
                     <div class="rectangle-3"></div>
                     <div class="text-wrapper-5">Or login with</div>
                     <div class="rectangle-3"></div>
                 </div>
-                <img class="frame-10" src="{{ asset('img/frame-228.svg') }}" /> --}}
+                <div class="frame-10" data-aos="fade-up" data-aos-delay="900">
+                    <a href="{{ route('auth.google') }}" class="google-btn">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google" width="20" height="20">
+                        <span>Google</span>
+                    </a>
+                    <a href="{{ route('auth.facebook') }}" class="facebook-btn" data-aos="fade-up" data-aos-delay="950">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" width="20" height="20">
+                        <span>Facebook</span>
+                    </a>
+                </div>
             </div>
         </form>
     </div>
