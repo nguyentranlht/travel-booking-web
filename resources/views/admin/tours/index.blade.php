@@ -12,9 +12,14 @@
         </a>
 
         <!-- Nút thêm tour mới -->
-        <a href="{{ route('admin.tours.create') }}" class="btn btn-primary">
-            <i class="fas fa-plus"></i> Add New Tour
-        </a>
+        <div class="ms-auto">
+            <a href="{{ route('admin.tours.create') }}" class="btn btn-primary me-2">
+                <i class="fas fa-plus"></i> Add New Tour
+            </a>
+            <a href="{{ route('admin.tours.trash') }}" class="btn btn-danger">
+                <i class="fas fa-trash"></i> Trash
+            </a>
+        </div>
     </div>
 
     <!-- Hiển thị thông báo thành công -->

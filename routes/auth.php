@@ -63,6 +63,12 @@ Route::middleware('auth')->group(function () {
     Route::prefix('admin')->middleware(['role:admin'])->group(function () {
         Route::get('/dashboard',[AdminDashboardController::class, 'index'])->name('admin.dashboard');
         
+        Route::prefix('/tours')->group(function () {
+            Route::get('/trash', [TourController::class, 'getAllTrashed'])->name('admin.tours.trash');
+            Route::post('/{id}/restore', [TourController::class, 'restore'])->name('admin.tours.restore');
+            Route::delete('/{id}/force-delete', [TourController::class, 'forceDelete'])->name('admin.tours.forceDelete');
+        });
+
         Route::resource('/tours', TourController::class)->names([
             'index' => 'admin.tours.index',
             'create' => 'admin.tours.create',

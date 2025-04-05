@@ -2,28 +2,31 @@
 
 namespace App\Services;
 
-use App\Interfaces\IBaseRepository;
+use App\Repositories\TourRepository;
 use Illuminate\Support\Facades\Storage;
 
 class TourService
 {
     protected $tourRepository;
 
-    public function __construct(IBaseRepository $tourRepository)
+    public function __construct(TourRepository $tourRepository)
     {
         $this->tourRepository = $tourRepository;
     }
 
+    // Get all tours
     public function getAllTours()
     {
         return $this->tourRepository->getAll();
     }
 
+    // Get all tours
     public function getTourById($id)
     {
         return $this->tourRepository->findById($id);
     }
-
+    
+    // Create tour
     public function createTour(array $data)
     {
         if (isset($data['images'])) {
@@ -33,6 +36,7 @@ class TourService
         return $this->tourRepository->create($data);
     }
 
+    // Update tour
     public function updateTour($id, array $data)
     {
         $tour = $this->tourRepository->findById($id);
@@ -49,11 +53,28 @@ class TourService
         return $this->tourRepository->update($id, $data);
     }
 
+    // Delete tour
     public function deleteTour($id)
     {
         return $this->tourRepository->delete($id);
     }
 
+    public function restoreTour($id)
+    {
+        return $this->tourRepository->restore($id);
+    }
+
+    public function forceDeleteTour($id)
+    {
+        return $this->tourRepository->forceDelete($id);
+    }
+
+    public function getAllToursWithTrashed()
+    {
+        return $this->tourRepository->getAllWithTrashed();
+    }
+
+    // Upload images
     private function uploadImages($images)
     {
         $uploadedPaths = [];

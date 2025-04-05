@@ -31,6 +31,24 @@ class TourRepository implements IBaseRepository
 
     public function delete($id)
     {
-        return Tour::destroy($id);
+        $tour = Tour::find($id);
+        return $tour ? $tour->delete() : false;
+    }
+
+    public function restore($id)
+    {
+        $tour = Tour::withTrashed()->find($id);
+        return $tour ? $tour->restore() : false;
+    }
+
+    public function forceDelete($id)
+    {
+        $tour = Tour::withTrashed()->find($id);
+        return $tour ? $tour->forceDelete() : false;
+    }
+
+    public function getAllWithTrashed()
+    {
+        return Tour::onlyTrashed()->get();
     }
 }
