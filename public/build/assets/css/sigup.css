@@ -515,4 +515,93 @@
     border-radius: 5px;
   }
   
+  /* Google Button Styling */
+  .google-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 100%;
+    background-color: #ffffff;
+    color: #757575;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    padding: 12px 16px;
+    margin-top: 15px;
+    font-family: var(--montserrat-regular-16px-font-family);
+    font-weight: var(--montserrat-regular-16px-font-weight);
+    font-size: var(--montserrat-regular-16px-font-size);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  
+  .google-btn:hover {
+    background-color: #f5f5f5;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+  
+  .google-btn img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* Divider Styling */
+  .social-divider {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0;
+  }
+  
+  .social-divider .line {
+    flex-grow: 1;
+    height: 1px;
+    background-color: #dcdcdc;
+  }
+  
+  .social-divider span {
+    padding: 0 15px;
+    color: white;
+    font-size: 14px;
+    font-family: var(--montserrat-regular-14px-font-family);
+  }
+  
+  .facebook-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 100%;
+    background-color: #1877f2;
+    color: #ffffff;
+    border: 1px solid #1877f2;
+    border-radius: 4px;
+    padding: 12px 16px;
+    margin-top: 15px;
+    font-family: var(--montserrat-regular-16px-font-family);
+    font-weight: var(--montserrat-regular-16px-font-weight);
+    font-size: var(--montserrat-regular-16px-font-size);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  
+  .facebook-btn:hover {
+    background-color: #166fe5;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+  
+  .facebook-btn img {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    padding: 2px;
+  }
+  
   
