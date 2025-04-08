@@ -1,0 +1,55 @@
+version: '3'
+services:
+  # PHP Service
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: travel-booking-app
+    container_name: travel-booking-app
+    restart: unless-stopped
+    working_dir: /var/www/
+    volumes:
+      - ./:/var/www
+    networks:
+      - travel-booking-network
+
+  # Nginx Service
+  nginx:
+    image: nginx:alpine
+    container_name: travel-booking-nginx
+    restart: unless-stopped
+    ports:
+      - "8000:80"
+    volumes:
+      - ./:/var/www
+      - ./docker/nginx/conf.d:/etc/nginx/conf.d/
+    networks:
+      - travel-booking-network
+
+  # MySQL Service
+  db:
+    image: mysql:8.0
+    container_name: travel-booking-db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: travel_booking
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_PASSWORD: secret
+      MYSQL_USER: travel_booking
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    ports:
+      - "3306:3306"
+    volumes:
+      - dbdata:/var/lib/mysql/
+    networks:
+      - travel-booking-network
+
+networks:
+  travel-booking-network:
+    driver: bridge
+
+volumes:
+  dbdata:
+    driver: local 
