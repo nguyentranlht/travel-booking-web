@@ -120,25 +120,6 @@
                         <span class="span">Already have an account? </span>
                         <a href="{{ route('login') }}" class="text-wrapper-2">Login</a>
                     </p>
-
-                    <!-- Divider -->
-                    <div class="social-divider" data-aos="fade-up" data-aos-duration="1000">
-                        <div class="line"></div>
-                        <span>Or Sign up with</span>
-                        <div class="line"></div>
-                    </div>
-
-                    <!-- Google Sign Up Button -->
-                    <a href="{{ route('auth.google') }}" class="google-btn" data-aos="zoom-in" data-aos-duration="1000">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google" width="20" height="20">
-                        <span>Sign up with Google</span>
-                    </a>
-                    
-                    <!-- Facebook Sign Up Button -->
-                    <a href="{{ route('auth.facebook') }}" class="facebook-btn" data-aos="zoom-in" data-aos-duration="1050">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" width="20" height="20">
-                        <span>Sign up with Facebook</span>
-                    </a>
                 </div>
             </div>
         </div>

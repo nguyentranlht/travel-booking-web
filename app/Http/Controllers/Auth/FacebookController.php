@@ -37,12 +37,12 @@ class FacebookController extends Controller
             }
             
             $url = 'https://www.facebook.com/v18.0/dialog/oauth?' . http_build_query([
-                'client_id' => $clientId,
-                'redirect_uri' => $redirectUri,
-                'scope' => 'email',
-                'response_type' => 'code',
-                'auth_type' => 'rerequest',
-                'display' => 'popup'
+                    'client_id' => $clientId,
+                    'redirect_uri' => $redirectUri,
+                    'scope' => 'email',
+                    'response_type' => 'code',
+                    'auth_type' => 'rerequest',
+                    'display' => 'popup'
             ]);
             
             Log::info('Redirecting to Facebook OAuth URL', ['url' => $url]);

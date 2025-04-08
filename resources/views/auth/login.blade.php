@@ -92,7 +92,7 @@
                 </div>
                 <div class="frame-10" data-aos="fade-up" data-aos-delay="900">
                     <a href="{{ route('auth.google') }}" class="google-btn">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google" width="20" height="20">
+                        <img src="https://www.svgrepo.com/download/223041/google.svg" alt="Google" width="20" height="20">
                         <span>Google</span>
                     </a>
                     <a href="{{ route('auth.facebook') }}" class="facebook-btn" data-aos="fade-up" data-aos-delay="950">

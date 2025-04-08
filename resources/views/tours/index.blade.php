@@ -11,7 +11,7 @@
                 <!-- Price Filter -->
                 <div class="mb-3">
                     <label class="form-label">Price</label>
-                    <input type="range" class="form-range" min="0" max="5000" step="100" value="2500">
+                    <input type="range" class="form-range" min="0" max="30000000" step="500000" value="2500">
                 </div>
 
                 <!-- Rating -->
@@ -80,7 +80,7 @@
                                 <span class="tour-amenities">🌟 20+ Amenities</span>
                             </div>
                             
-                            <p class="tour-description text-muted">{{ Str::limit($tour->description, 100) }}</p>
+                            <p class="tour-description text-muted">{{ \Illuminate\Support\Str::limit($tour->description, 100) }}</p>
 
                             <!-- Footer -->
                             <div class="tour-footer d-flex justify-content-between align-items-center mt-3">

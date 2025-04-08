@@ -29,7 +29,7 @@
 
                         <div class="card-body">
                             <h5 class="card-title">{{ $tour->name }}</h5>
-                            <p class="card-text text-muted">{{ Str::limit($tour->description, 100) }}</p>
+                            <p class="card-text text-muted">{{ \Illuminate\Support\Str::limit($tour->description, 100) }}</p>
                             
                             <div class="d-flex justify-content-between align-items-center">
                                 <a href="{{ route('tours.show', $tour->id) }}" class="btn btn-outline-primary">View Details</a>
